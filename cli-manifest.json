@@ -5125,6 +5125,51 @@
   },
   {
     "site": "boss",
+    "name": "contact",
+    "description": "BOSS 直聘求职者主动联系招聘者（发起沟通）",
+    "access": "write",
+    "domain": "www.zhipin.com",
+    "strategy": "cookie",
+    "browser": true,
+    "args": [
+      {
+        "name": "boss-id",
+        "type": "str",
+        "required": true,
+        "positional": true,
+        "help": "招聘者 ID（从 search 结果的 bossId 字段获取）"
+      },
+      {
+        "name": "job-id",
+        "type": "str",
+        "required": true,
+        "help": "职位 ID（encryptJobId，从 search 结果获取）"
+      },
+      {
+        "name": "security-id",
+        "type": "str",
+        "required": true,
+        "help": "职位安全 ID（从 search 结果的 security_id 字段获取）"
+      },
+      {
+        "name": "text",
+        "type": "str",
+        "default": "",
+        "required": false,
+        "help": "自定义招呼语（为空则使用默认模板）"
+      }
+    ],
+    "columns": [
+      "status",
+      "detail"
+    ],
+    "type": "js",
+    "modulePath": "boss/contact.js",
+    "sourceFile": "boss/contact.js",
+    "navigateBefore": false
+  },
+  {
+    "site": "boss",
     "name": "detail",
     "description": "BOSS直聘查看职位详情",
     "access": "read",
